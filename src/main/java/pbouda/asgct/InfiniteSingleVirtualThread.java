@@ -6,13 +6,11 @@ import java.util.concurrent.Executors;
 
 public class InfiniteSingleVirtualThread {
 
-    private static final Path FILE = Path.of("temp-file.bin");
-
     private static final ExecutorService EXECUTOR =
             Executors.newVirtualThreadPerTaskExecutor();
 
-    private static int MB50 = 50 * 1000 * 1000;
-    private static byte[] CONTENT = new byte[MB50];
+    private static final int MB50 = 50 * 1000 * 1000;
+    private static final byte[] CONTENT = new byte[MB50];
 
     public static void main(String[] args) throws Exception {
         System.out.println("Click! " + ProcessHandle.current().pid());
@@ -24,7 +22,7 @@ public class InfiniteSingleVirtualThread {
     }
 
     private static void spawnVirtualThread() {
-        EXECUTOR.submit(() -> {
+        EXECUTOR.execute(() -> {
             while (true) {
                 arrayCopying();
             }

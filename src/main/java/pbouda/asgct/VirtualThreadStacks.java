@@ -23,7 +23,7 @@ public class VirtualThreadStacks {
     }
 
     private static void spawnVirtualThread() {
-        EXECUTOR.submit(() -> doSomeBlocking());
+        EXECUTOR.execute(() -> doSomeBlocking());
     }
 
     private static void doSomeBlocking() {

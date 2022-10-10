@@ -23,10 +23,10 @@ public class LeveledVirtualThread {
     }
 
     private static void spawnVirtualThread() {
-        EXECUTOR.submit(() -> {
+        EXECUTOR.execute(() -> {
             doSomeBlocking();
 
-            EXECUTOR.submit(() -> doSomeBlocking2());
+            EXECUTOR.execute(() -> doSomeBlocking2());
         });
     }
 
