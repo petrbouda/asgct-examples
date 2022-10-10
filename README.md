@@ -9,11 +9,19 @@ java src/main/java/pbouda/asgct/CreateJunkFile.java
 
 ```
 $ java -XX:+UseParallelGC -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints --enable-preview --source 19 src/main/java/pbouda/asgct/VirtualThreadStacks.java
+```
 
+```
 $ profiler.sh -d 30 -e cpu -i 1ms -I 'java/*' -f virtual-threads.html $(pgrep -f VirtualThreadStacks)
 ```
 
 [Virtual Threads - Flamegraph](virtual-threads.html)
+
+```
+profiler.sh -d 30 -e cpu -t -i 1ms -I 'java/*' -f virtual-threads-with-t-option.html $(pgrep -f VirtualThreadStacks)
+```
+
+[Virtual Threads per-thread view - Flamegraph](virtual-threads-with-t-option.html)
 
 #### JCMD `VirtualThreadStacks` Thread.print
 ```
