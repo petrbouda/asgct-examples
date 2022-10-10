@@ -15,7 +15,7 @@ $ profiler.sh -d 30 -e cpu -i 1ms -I 'java/*' -f virtual-threads.html $(pgrep -f
 
 [Virtual Threads - Flamegraph](virtual-threads.html)
 
-#### JCMDn`VirtualThreadStacks` Thread.print
+#### JCMD `VirtualThreadStacks` Thread.print
 ```
 $ jcmd $(pgrep -f VirtualThreadStacks) Thread.print
 
