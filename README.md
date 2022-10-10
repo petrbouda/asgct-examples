@@ -23,6 +23,14 @@ profiler.sh -d 30 -e cpu -t -i 1ms -I 'java/*' -f virtual-threads-with-t-option.
 
 [Virtual Threads per-thread view - Flamegraph](virtual-threads-with-t-option.html)
 
+```
+profiler.sh -d 30 -e cpu -t -i 1ms -I 'java/*' -f virtual-threads-leveled.html $(pgrep -f LeveledVirtualThread)
+```
+
+- a Virtual Thread calls another Virtual threads inside its function
+
+[Virtual Threads leveled - Flamegraph](virtual-threads-leveled.html)
+
 #### JCMD `VirtualThreadStacks` Thread.print
 ```
 $ jcmd $(pgrep -f VirtualThreadStacks) Thread.print
